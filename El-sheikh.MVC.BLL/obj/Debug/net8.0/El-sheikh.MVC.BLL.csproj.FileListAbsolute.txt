@@ -1,0 +1,15 @@
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\bin\Debug\net8.0\El-sheikh.MVC.BLL.deps.json
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\bin\Debug\net8.0\El-sheikh.MVC.BLL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\bin\Debug\net8.0\El-sheikh.MVC.BLL.pdb
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\bin\Debug\net8.0\El-sheikh.MVC.DAL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\bin\Debug\net8.0\El-sheikh.MVC.DAL.pdb
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.csproj.AssemblyReference.cache
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.GeneratedMSBuildEditorConfig.editorconfig
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.AssemblyInfoInputs.cache
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.AssemblyInfo.cs
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.csproj.CoreCompileInputs.cache
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheik.95A6A86C.Up2Date
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\refint\El-sheikh.MVC.BLL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.pdb
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\ref\El-sheikh.MVC.BLL.dll

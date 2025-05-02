@@ -1,0 +1,12 @@
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\bin\Debug\net8.0\El-sheikh.MVC.DAL.deps.json
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\bin\Debug\net8.0\El-sheikh.MVC.DAL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\bin\Debug\net8.0\El-sheikh.MVC.DAL.pdb
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.GeneratedMSBuildEditorConfig.editorconfig
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.AssemblyInfoInputs.cache
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.AssemblyInfo.cs
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.csproj.CoreCompileInputs.cache
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\refint\El-sheikh.MVC.DAL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.pdb
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\ref\El-sheikh.MVC.DAL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.csproj.AssemblyReference.cache

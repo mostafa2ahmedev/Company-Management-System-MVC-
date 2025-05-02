@@ -1,0 +1,44 @@
+﻿
+@model DepartmentEditViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+    
+<h1>Edit Department</h1>
+
+<div class="row justify-content-center align-items-center">
+
+    <form asp-action="Edit" method="post">  
+        <div asp-validation-summary="ModelOnly"></div>
+
+
+
+        <div class="form-group">
+            <label asp-for="Code" class="form-label"></label>
+            <input asp-for="Code" class="form-control">
+            <span asp-validation-for="Code" class="text-danger"></span>  
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Code" class="text-danger"></span> 
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CreationDate" class="form-label"></label>
+            <input type="date" asp-for="CreationDate" class="form-control">
+        </div>
+        <br/>
+        <div>
+            <input type="submit" class="btn btn-primary" value="Save" />
+            <a asp-action="Index" class="btn btn-light">Cancel</a>
+        </div>
+
+    </form>
+
+
+</div>

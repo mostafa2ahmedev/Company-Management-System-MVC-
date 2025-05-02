@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\El-sheikh.MVC.PL.props" />
+</Project>
