@@ -1,5 +1,5 @@
-﻿using El_sheikh.MVC.DAL.Entities.Department;
-using El_sheikh.MVC.DAL.Entities.Employee;
+﻿using El_sheikh.MVC.DAL.Entities.Departments;
+using El_sheikh.MVC.DAL.Entities.Employees;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

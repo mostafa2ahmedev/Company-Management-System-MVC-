@@ -1,5 +1,5 @@
 ﻿using El_sheikh.MVC.DAL.Common.Enums;
-using El_sheikh.MVC.DAL.Entities.Employee;
+using El_sheikh.MVC.DAL.Entities.Employees;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

@@ -2,7 +2,7 @@
 
 namespace El_sheikh.MVC.PL.ViewModels.Departments
 {
-    public class DepartmentEditViewModel
+    public class DepartmentViewModel
     {
   
         [Required(ErrorMessage ="Code is Required Ya Hamada")]

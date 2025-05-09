@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250502202809_EmployeeModuleMigration")]
-    partial class EmployeeModuleMigration
+    [Migration("20250503175140_EmployeeModule")]
+    partial class EmployeeModule
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,6 +80,7 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<int?>("Age")
@@ -94,6 +95,7 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
                         .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("EmployeeType")

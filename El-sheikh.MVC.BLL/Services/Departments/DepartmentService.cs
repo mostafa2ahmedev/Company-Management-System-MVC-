@@ -1,6 +1,6 @@
 ﻿using El_sheikh.MVC.BLL.Models.Departments;
 using El_sheikh.MVC.BLL.Services.Departments;
-using El_sheikh.MVC.DAL.Entities.Department;
+using El_sheikh.MVC.DAL.Entities.Departments;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Departments;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,7 +22,7 @@ namespace El_sheikh.MVC.BLL.Services.Departments
 
         public IEnumerable<DepartmentDTO> GetAllDepartments()
         {
-            var departments = _departmentRepository.GetAllAsQueryable().Select(department => new DepartmentDTO()
+            var departments = _departmentRepository.GetIQueryable().Where(D => !D.IsDeleted).Select(department => new DepartmentDTO()
             {
                 Id = department.Id,
                 Code = department.Code,

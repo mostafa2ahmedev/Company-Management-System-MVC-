@@ -13,3 +13,4 @@ W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\refint\El-sheikh.MVC.BLL.dll
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.pdb
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\ref\El-sheikh.MVC.BLL.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.BLL\obj\Debug\net8.0\El-sheikh.MVC.BLL.sourcelink.json

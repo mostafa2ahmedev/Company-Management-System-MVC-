@@ -1,0 +1,38 @@
+﻿@model int
+
+@*
+*@
+
+
+<td>
+    <a  asp-action="Details" asp-route-id="@Model" class="text-success">
+        <i class="fas fa-eye"></i> Details
+    </a>
+</td>
+<td>
+    <a asp-action="Edit" asp-route-id="@Model" class="text-warning">
+        <i class="fas fa-edit"></i> Update
+    </a>
+</td>
+
+<td>
+
+    @if (ViewData["Title"] as string == "Employees")
+    {
+    <td>
+           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal-@Model"> 
+                    Delete 
+            </button> 
+    </td>
+
+    }
+    else {
+        <a asp-action="Delete" asp-route-id="@Model" class="text-warning">
+            <i class="fas fa-trash"></i> Delete
+        </a>
+    }
+
+</td>
+
+
+

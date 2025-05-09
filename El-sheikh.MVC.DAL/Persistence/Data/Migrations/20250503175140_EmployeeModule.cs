@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class EmployeeModuleMigration : Migration
+    public partial class EmployeeModule : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,10 +19,10 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "varchar(50)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: true),
-                    Address = table.Column<string>(type: "varchar(100)", nullable: true),
+                    Address = table.Column<string>(type: "varchar(100)", nullable: false),
                     Salary = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    Email = table.Column<string>(type: "varchar(50)", nullable: true),
+                    Email = table.Column<string>(type: "varchar(50)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "varchar(20)", nullable: true),
                     HiringDate = table.Column<DateOnly>(type: "date", nullable: false),
                     Gender = table.Column<string>(type: "varchar(20)", nullable: false),

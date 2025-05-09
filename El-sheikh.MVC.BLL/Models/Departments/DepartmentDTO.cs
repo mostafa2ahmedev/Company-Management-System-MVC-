@@ -1,4 +1,4 @@
-﻿using El_sheikh.MVC.DAL.Entities.Department;
+﻿using El_sheikh.MVC.DAL.Entities.Departments;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

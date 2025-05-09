@@ -1,17 +1,20 @@
 using El_sheikh.MVC.BLL.Services.Departments;
+using El_sheikh.MVC.BLL.Services.Employees;
 using El_sheikh.MVC.DAL.Persistence.Data;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Departments;
+using El_sheikh.MVC.DAL.Persistence.Repositories.Employees;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace El_sheikh.MVC.PL
 {
+
     public class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+        
             #region Configure Services
             //builder.Services.AddScoped<ApplicationDbContext>();
             //builder.Services.AddScoped<DbContextOptions<ApplicationDbContext>>(serviceProvider =>
@@ -27,10 +30,12 @@ namespace El_sheikh.MVC.PL
             builder.Services.AddDbContext<ApplicationDbContext>(optionsBuilder => {
 
                 //optionsBuilder.UseSqlServer(builder.Configuration.GetSection("ConnectionStrings")["DefaultConnection"]);
-                optionsBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                optionsBuilder.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
             builder.Services.AddScoped<IDepartmentRepository,DepartmentRepository>();
             builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+            builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            builder.Services.AddScoped<IEmployeeService, EmployeeService>();
             #endregion
 
 

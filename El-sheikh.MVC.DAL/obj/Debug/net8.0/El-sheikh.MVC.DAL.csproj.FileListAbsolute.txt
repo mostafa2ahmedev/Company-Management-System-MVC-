@@ -10,3 +10,4 @@ W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.pdb
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\ref\El-sheikh.MVC.DAL.dll
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.csproj.AssemblyReference.cache
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.DAL\obj\Debug\net8.0\El-sheikh.MVC.DAL.sourcelink.json

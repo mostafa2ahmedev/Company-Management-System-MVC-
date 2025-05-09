@@ -20,4 +20,8 @@
     <ProjectReference Include="..\El-sheikh.MVC.BLL\El-sheikh.MVC.BLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\Employees\" />
+  </ItemGroup>
+
 </Project>

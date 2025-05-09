@@ -48,6 +48,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Department/Partials/_CreateEditDepartmentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxQYXJ0aWFsc1xfQ3JlYXRlRWRpdERlcGFydG1lbnRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Department/Partials/_DetailsDeleteDepartmentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxQYXJ0aWFsc1xfRGV0YWlsc0RlbGV0ZURlcGFydG1lbnRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Employee/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Employee/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +82,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Shared/_ButtonsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CdXR0b25zUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [W:/Root Material .NET/Assingments/MVC/El-sheikh.MVC/El-sheikh.MVC.PL/Views/Shared/_ValidationScriptsPartial.cshtml]

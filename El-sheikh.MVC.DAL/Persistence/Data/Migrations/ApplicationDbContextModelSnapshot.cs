@@ -22,7 +22,7 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("El_sheikh.MVC.DAL.Entities.Department.Department", b =>
+            modelBuilder.Entity("El_sheikh.MVC.DAL.Entities.Departments.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
                     b.ToTable("Departments");
                 });
 
-            modelBuilder.Entity("El_sheikh.MVC.DAL.Entities.Employee.Employee", b =>
+            modelBuilder.Entity("El_sheikh.MVC.DAL.Entities.Employees.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -77,6 +77,7 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<int?>("Age")
@@ -90,7 +91,11 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETUTCDATE()");
 
+                    b.Property<int?>("DepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("EmployeeType")
@@ -130,7 +135,24 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentId");
+
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("El_sheikh.MVC.DAL.Entities.Employees.Employee", b =>
+                {
+                    b.HasOne("El_sheikh.MVC.DAL.Entities.Departments.Department", "Department")
+                        .WithMany("Employee")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("El_sheikh.MVC.DAL.Entities.Departments.Department", b =>
+                {
+                    b.Navigation("Employee");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,49 +1,21 @@
-﻿@model CreatedDepartmentDto
+﻿@model DepartmentViewModel
 @{
     ViewData["Title"] = "Create";
-    
+    ViewData["Action"] = "Create";
+
 }
+
 <div class="row justify-content-center align-items-center">
-<h1 class="col-8 my-3">Create New Department</h1>
+
 <br/>
-    <form asp-action="Create"  @*action="/Department/Create" method="post" *@ >
-    <div asp-validation-summary="ModelOnly"></div> 
-    @*all > هيظهرلك كل الفاليديشنز ايرورز  ف المكان دا  للبروبيرتيز وكمان للماسدج الي انت ضيفتها
-      modelonly> هيظهرلك بس الايرور ماسدج الي انت ضيفتها   
-    *@
-
-    @* <div class="form-group"> *@
-    @*     <label for="Code" class="form-label">Code</label> *@
-    @*     <input type="text" name="Code" id="Code"  class="form-control"> *@
-    @* </div> *@
-
-    <div class="form-group"> 
-       <label asp-for="Code" class="form-label"></label>  
-        <input asp-for="Code"  class="form-control">
-        <span asp-validation-for="Code"   class="text-danger"></span>  @*For error messages*@
-     </div>
-    <div class="form-group">
-        <label asp-for="Name" class="form-label"></label>
-        <input asp-for="Name" class="form-control">
-            <span asp-validation-for="Name" class="text-danger"></span>  @*For error messages*@
-    </div>
-    <div class="form-group">
-        <label asp-for="Description" class="form-label"></label>
-        <textarea asp-for="Description" class="form-control"></textarea>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="CreationDate" class="form-label"></label>
-        <input type="date" asp-for="CreationDate" class="form-control">
-    </div>
-   
-    <br/>
-    <div>
-        <input type="submit" class="btn btn-primary" value="Create" />
-        <a asp-action="Index" class="btn btn-light">Back To List</a>
-    </div>
-
-</form>
+    <h1 class="col-8 my-3">Create New Department</h1>
+    <partial name="Partials/_CreateEditDepartmentPartial"/>
 
 
  </div>
+
+
+
+@section validationScripts {
+    <partial name="_ValidationScriptsPartial" />
+}

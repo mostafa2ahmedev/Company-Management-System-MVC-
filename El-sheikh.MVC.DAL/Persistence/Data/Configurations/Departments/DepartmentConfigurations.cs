@@ -1,4 +1,4 @@
-﻿using El_sheikh.MVC.DAL.Entities.Department;
+﻿using El_sheikh.MVC.DAL.Entities.Departments;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -18,6 +18,12 @@ namespace El_sheikh.MVC.DAL.Persistence.Data.Configurations.Departments
             builder.Property(D => D.Code).HasColumnType("varchar(20)").IsRequired();
             builder.Property(D => D.CreatedOn).HasDefaultValueSql("GETUTCDATE()");
             builder.Property(D => D.LastModifiedOn).HasComputedColumnSql("GETUTCDATE()");
+
+            builder.HasMany(D => D.Employee)
+                .WithOne(E => E.Department)
+                .HasForeignKey(E => E.DepartmentId)
+                .OnDelete(DeleteBehavior.SetNull);
+                
 
         }
     }

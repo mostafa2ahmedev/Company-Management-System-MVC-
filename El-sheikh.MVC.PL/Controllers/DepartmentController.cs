@@ -1,6 +1,7 @@
 ﻿using El_sheikh.MVC.BLL.Models.Departments;
 using El_sheikh.MVC.BLL.Services.Departments;
 using El_sheikh.MVC.PL.ViewModels.Departments;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Policy;
@@ -25,6 +26,7 @@ namespace El_sheikh.MVC.PL.Controllers
         public IActionResult Index()
         {
             var departments = _departmentService.GetAllDepartments();
+
             return View(departments);
         }
 
@@ -42,8 +44,10 @@ namespace El_sheikh.MVC.PL.Controllers
         }
 
         [HttpPost] //baseURL/Departments/Create
+        [ValidateAntiForgeryToken]  // Action filter
+       
 
-        public IActionResult Create(CreatedDepartmentDto department)
+        public IActionResult Create(DepartmentViewModel department)
         {
             var message = string.Empty;
             if (!ModelState.IsValid)   // Server side validation
@@ -53,13 +57,27 @@ namespace El_sheikh.MVC.PL.Controllers
 
             try
             {
-                var created = _departmentService.CreateDepartment(department) > 0;
+                var createdDepartment = new CreatedDepartmentDto()
+                {
+                    Code = department.Code,
+                    Name = department.Name,
+                    CreationDate = department.CreationDate,
+                    Description = department.Description,
 
-                if (created)
-                    return RedirectToAction(nameof(Index)); // Fix: Redirect to Index action
+
+                };
+
+                var created = _departmentService.CreateDepartment(createdDepartment) > 0;
+
+                if (!created)
+                {
+                    message = "Department is not created";
+                    ModelState.AddModelError(string.Empty, message);
 
 
-                message = "An error has occured during Creating the department :(";
+                    return View(department);
+                }
+          
 
             }
             catch (Exception ex)
@@ -68,11 +86,12 @@ namespace El_sheikh.MVC.PL.Controllers
                 _logger.LogError(ex, ex.Message);
                 // 2. Set Message
                 message = _webHostEnvironment.IsDevelopment() ? ex.Message : "An error has occured during Creating the department";
-
+                TempData["Message"] = message;
+              
             }
 
-            ModelState.AddModelError(string.Empty, message);
-            return View(department);
+            TempData["Message"] = "Department Created Successfully";
+            return RedirectToAction(nameof(Index)); // Fix: Redirect to Index action
         }
 
         #endregion
@@ -130,7 +149,7 @@ namespace El_sheikh.MVC.PL.Controllers
             }
 
 
-            return View(new DepartmentEditViewModel()
+            return View(new DepartmentViewModel()
             {
                 Code = department.Code,
                 Name = department.Name,
@@ -141,7 +160,8 @@ namespace El_sheikh.MVC.PL.Controllers
 
 
         [HttpPost]
-        public IActionResult Edit([FromRoute] int id, DepartmentEditViewModel departmentEditVM)
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit([FromRoute] int id, DepartmentViewModel departmentEditVM)
         {
             if (!ModelState.IsValid)
             {  // Server side validation
@@ -189,52 +209,55 @@ namespace El_sheikh.MVC.PL.Controllers
 
 
         #region Delete
-        //[HttpGet]
-        //public IActionResult Delete(int? id)
-        //{
-        //    if (id is null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    var department = _departmentService.GetDepartmentById(id.Value);
+        [HttpGet]
+        public IActionResult Delete(int? id)
+        {
+            if (id is null)
+            {
+                return BadRequest();
+            }
+            var department = _departmentService.GetDepartmentById(id.Value);
 
-        //    if (department is null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(department);
+            if (department is null)
+            {
+                return NotFound();
+            }
+            return View(department);
 
 
 
-        //}
+        }
 
-        [HttpPost]
-        public IActionResult Delete(int id) {
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int? id)
+        {
+            if (id is null)
+            {
+                return BadRequest();
+            }
+
             var message = string.Empty;
             try
             {
-  
-
-                var deleted = _departmentService.DeleteDepartment(id);
-
+                var deleted = _departmentService.DeleteDepartment(id.Value);
                 if (deleted)
+                {
                     return RedirectToAction(nameof(Index));
+                }
 
-                message = "An error has occured during deleting the department";
+                message = "An error occurred while deleting the department";
             }
             catch (Exception ex)
             {
-
-                // 1.Log Exception
                 _logger.LogError(ex, ex.Message);
-                // 2. Set Message
-                message = _webHostEnvironment.IsDevelopment() ? ex.Message : "An error has occured during deleting the department";
-
-
+                message = _webHostEnvironment.IsDevelopment()
+                    ? ex.Message
+                    : "An error occurred while deleting the department";
             }
-            ModelState.AddModelError(string.Empty, message);
-            return View();
 
+            ModelState.AddModelError(string.Empty, message);
+            return View(_departmentService.GetDepartmentById(id.Value));
         }
         #endregion
 

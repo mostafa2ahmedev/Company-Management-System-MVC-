@@ -9,10 +9,10 @@
 
   <ItemGroup>
     <Folder Include="Persistence\Data\Data Seeds\" />
-    <Folder Include="Persistence\Repositories\Employees\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
   </ItemGroup>
 
