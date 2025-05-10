@@ -22,7 +22,8 @@ namespace El_sheikh.MVC.BLL.Services.Employees
         public IEnumerable<EmployeeDto> GetEmployees(string search)
         {
           return  _employeeRepository.GetIQueryable()
-                .Where(E=>!E.IsDeleted).Select(E=> new EmployeeDto() { 
+                .Where(E=>!E.IsDeleted && (string.IsNullOrEmpty(search)||E.Name.ToLower().Contains(search.ToLower())))
+                .Select(E=> new EmployeeDto() { 
           Id = E.Id,
           Name = E.Name,
           Age = E.Age,

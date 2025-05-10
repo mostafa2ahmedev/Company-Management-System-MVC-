@@ -1,13 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "El-sheikh.MVC.PL", "El-sheikh.MVC.PL\El-sheikh.MVC.PL.csproj", "{A5753C20-EB1B-4051-858E-0164EF104967}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "El-sheikh.MVC.BLL", "El-sheikh.MVC.BLL\El-sheikh.MVC.BLL.csproj", "{A1FAA556-E359-41C8-8265-D29302CEFF9B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "El-sheikh.MVC.DAL", "El-sheikh.MVC.DAL\El-sheikh.MVC.DAL.csproj", "{5A415FCB-B5B8-46B3-829A-365ED22DCF51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72388DE0-FF84-4581-9E64-91E7278B34EA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,7 +8,7 @@
 <br />
 <a asp-controller="Employee" asp-action="Create" class="btn btn-primary">Create a new Employee</a>
 <br />
-<br />
+
 <form asp-action="Index" method="get" class="mt-5 row justify-content-center align-items-center">
     <div class="row col-8 offset-1">
         <div class="col-8">
@@ -19,7 +19,7 @@
         </div>
     </div>
 </form>
-
+<br />
 @if (Model.Any())
 {
     <table class="table table-bordered table-hover text-center align-middle">
