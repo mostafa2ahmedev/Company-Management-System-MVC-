@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ePpaQtV59qU=",
+  "dgSpecHash": "Wn/eAAt/990=",
   "success": true,
   "projectFilePath": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\El-sheikh.MVC.PL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mosta\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\mosta\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\mosta\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\mosta\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",

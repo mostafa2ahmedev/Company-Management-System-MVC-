@@ -1,4 +1,5 @@
-﻿using El_sheikh.MVC.BLL.Models.Departments;
+﻿using AutoMapper;
+using El_sheikh.MVC.BLL.Models.Departments;
 using El_sheikh.MVC.BLL.Services.Departments;
 using El_sheikh.MVC.PL.ViewModels.Departments;
 using Microsoft.AspNetCore.Authorization;
@@ -13,12 +14,14 @@ namespace El_sheikh.MVC.PL.Controllers
         private readonly IDepartmentService _departmentService;
         private readonly ILogger<DepartmentController> _logger;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IMapper _mapper;
 
-        public DepartmentController(IDepartmentService departmentService ,ILogger<DepartmentController> logger,IWebHostEnvironment webHostEnvironment)
+        public DepartmentController(IDepartmentService departmentService ,ILogger<DepartmentController> logger,IWebHostEnvironment webHostEnvironment,IMapper mapper)
         {
             _departmentService = departmentService;
             this._logger = logger;
             this._webHostEnvironment = webHostEnvironment;
+            _mapper = mapper;
         }
 
         #region Index
@@ -57,17 +60,11 @@ namespace El_sheikh.MVC.PL.Controllers
 
             try
             {
-                var createdDepartment = new CreatedDepartmentDto()
-                {
-                    Code = department.Code,
-                    Name = department.Name,
-                    CreationDate = department.CreationDate,
-                    Description = department.Description,
+                var CreatedDepartment = _mapper.Map<DepartmentViewModel, CreatedDepartmentDto>(department);
 
+         
 
-                };
-
-                var created = _departmentService.CreateDepartment(createdDepartment) > 0;
+                var created = _departmentService.CreateDepartment(CreatedDepartment) > 0;
 
                 if (!created)
                 {
@@ -99,7 +96,7 @@ namespace El_sheikh.MVC.PL.Controllers
 
 
 
-        #region Details
+        #region Details 
 
         [HttpGet]
         public IActionResult Details(int? id)
@@ -149,13 +146,8 @@ namespace El_sheikh.MVC.PL.Controllers
             }
 
 
-            return View(new DepartmentViewModel()
-            {
-                Code = department.Code,
-                Name = department.Name,
-                CreationDate = department.CreationDate,
-                Description = department.Description,
-            });
+            var departmentVM = _mapper.Map<DepartmentDetailsDto, DepartmentViewModel>(department);
+            return View(departmentVM);
         }
 
 
@@ -171,19 +163,13 @@ namespace El_sheikh.MVC.PL.Controllers
             var message = string.Empty;
             try
             {
-                var department = new UpdatedDepartmentDto()
-                {
-                    Id = id,
-                    Code = departmentEditVM.Code,
-                    Name = departmentEditVM.Name,
-                    CreationDate = departmentEditVM.CreationDate,
-                    Description = departmentEditVM.Description,
+                var updatedDepartment = _mapper.Map<DepartmentViewModel, UpdatedDepartmentDto>(departmentEditVM);
 
-
-                };
-
-                var updated = _departmentService.UpdateDepartment(department) > 0;
-
+                #region (updated) by me
+                updatedDepartment.Id = id; 
+                #endregion
+                var updated = _departmentService.UpdateDepartment(updatedDepartment) > 0;
+                
                 if (updated)
                     return RedirectToAction(nameof(Index));
 

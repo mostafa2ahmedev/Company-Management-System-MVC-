@@ -293,3 +293,4 @@ W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.PL\bin\Debug\n
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.PL\obj\Debug\net8.0\El-sheikh.MVC.PL.sourcelink.json
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.PL\bin\Debug\net8.0\Castle.Core.dll
 W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.PL\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
+W:\Root Material .NET\Assingments\MVC\El-sheikh.MVC\El-sheikh.MVC.PL\bin\Debug\net8.0\AutoMapper.dll
