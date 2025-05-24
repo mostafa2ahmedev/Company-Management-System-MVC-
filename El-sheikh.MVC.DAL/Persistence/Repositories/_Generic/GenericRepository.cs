@@ -20,12 +20,12 @@ namespace El_sheikh.MVC.DAL.Persistence.Repositories._Generic
         }
         
 
-        public IEnumerable<T> GetAll(bool withAsNoTracking = true)
+        public async Task<IEnumerable<T>> GetAllAsync(bool withAsNoTracking = true)
         {
             if (withAsNoTracking)
-                return _dbContext.Set<T>().Where(X => !X.IsDeleted).AsNoTracking().ToList();
+                return await _dbContext.Set<T>().Where(X => !X.IsDeleted).AsNoTracking().ToListAsync();
             else
-                return _dbContext.Set<T>().Where(X => !X.IsDeleted).ToList();
+                return await _dbContext.Set<T>().Where(X => !X.IsDeleted).ToListAsync();
         }
 
         public IQueryable<T> GetIQueryable()
@@ -33,16 +33,16 @@ namespace El_sheikh.MVC.DAL.Persistence.Repositories._Generic
           return  _dbContext.Set<T>();
         }
 
-        public T? Get(int id)
+        public async Task<T?> GetAsync(int id)
         {
-          return   _dbContext.Set<T>().Find(id);
+          return  await _dbContext.Set<T>().FindAsync(id);
        
         }
 
 
         public void Add(T entity)
         {
-           _dbContext.Set<T>().Add(entity);
+          _dbContext.Set<T>().Add(entity);
 
         }
         public void Update(T entity)

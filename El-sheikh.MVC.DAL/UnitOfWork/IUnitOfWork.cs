@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace El_sheikh.MVC.DAL.UnitOfWork
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IAsyncDisposable
     {
         public IEmployeeRepository EmployeeRepository { get;  }
         public IDepartmentRepository DepartmentRepository { get; }
 
 
-        int Complete();
+        Task<int> CompleteAsync();
 
     
     }

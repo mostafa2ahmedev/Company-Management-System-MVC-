@@ -8,7 +8,7 @@
     // var departments = new SelectList(@ViewData["Departments"] as IEnumerable<DepartmentDTO>
     // , nameof(DepartmentDTO.Id), nameof(DepartmentDTO.Name));
 
-    var departments = new SelectList(_departmentService.GetAllDepartments() as IEnumerable<DepartmentDTO>
+    var departments = new SelectList(await _departmentService.GetAllDepartmentsAsync() as IEnumerable<DepartmentDTO>
     , nameof(DepartmentDTO.Id), nameof(DepartmentDTO.Name));
 
 }

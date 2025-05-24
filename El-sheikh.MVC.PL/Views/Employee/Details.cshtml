@@ -4,9 +4,8 @@
 @{
     ViewData["Title"] = "Details";
 
-    var DepartmentName = _departmentService.GetAllDepartments()
-        .FirstOrDefault(d => d.Id == Model.DepartmentId)?.Name;
-
+    var departments = await _departmentService.GetAllDepartmentsAsync();
+    var DepartmentName = departments.FirstOrDefault(d => d.Id == Model.DepartmentId)?.Name;
 
 }
 

@@ -26,9 +26,9 @@ namespace El_sheikh.MVC.PL.Controllers
 
         #region Index
         [HttpGet]//baseURL/Employee/Index
-        public IActionResult Index(string search)
+        public async Task<IActionResult> Index(string search)
         {
-            var employees = _employeeService.GetEmployees(search);
+            var employees =await _employeeService.GetEmployeesAsync(search);
             return View(employees);
         }
 
@@ -49,7 +49,7 @@ namespace El_sheikh.MVC.PL.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(CreatedEmployeeDto employeeDto) {
+        public async Task<IActionResult> Create(CreatedEmployeeDto employeeDto) {
 
             var message = string.Empty;
             if (!ModelState.IsValid)   // Server side validation
@@ -59,7 +59,7 @@ namespace El_sheikh.MVC.PL.Controllers
 
             try
             {
-                var created = _employeeService.CreateEmployee(employeeDto) > 0;
+                var created = await _employeeService.CreateEmployeeAsync(employeeDto) > 0;
 
                 if (created)
                     return RedirectToAction(nameof(Index)); // Fix: Redirect to Index action
@@ -86,12 +86,12 @@ namespace El_sheikh.MVC.PL.Controllers
 
         #region Details
         [HttpGet]//baseUrl/Employee/Details
-        public IActionResult Details(int? id) {
+        public async Task<IActionResult> Details(int? id) {
             if (id is null) { 
             return BadRequest();
             }
 
-             var employeeDetails=  _employeeService.GetEmployeeById(id.Value);
+             var employeeDetails=await  _employeeService.GetEmployeeByIdAsync(id.Value);
 
             if (employeeDetails is null)
             {
@@ -110,13 +110,13 @@ namespace El_sheikh.MVC.PL.Controllers
         #region Edit
 
         [HttpGet] //baseUrl/Employee/Edit/id
-        public IActionResult Edit(int? id) 
+        public async Task<IActionResult> Edit(int? id) 
          {
 
             if (id is null) {
                 return BadRequest();
             }
-            var employee = _employeeService.GetEmployeeById(id.Value);
+            var employee =await _employeeService.GetEmployeeByIdAsync(id.Value);
 
             if (employee is null) {
 
@@ -140,7 +140,7 @@ namespace El_sheikh.MVC.PL.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit([FromRoute]int id,UpdatedEmployeeDto employee)
+        public async Task<IActionResult> Edit([FromRoute]int id,UpdatedEmployeeDto employee)
         {
 
             if (!ModelState.IsValid) {
@@ -149,7 +149,7 @@ namespace El_sheikh.MVC.PL.Controllers
             var message = string.Empty;
             try
             {
-                var updated= _employeeService.UpdateEmployee(employee)>0;
+                var updated= await _employeeService.UpdateEmployeeAsync(employee)>0;
                 if (updated)
                     return RedirectToAction(nameof(Index));
 
@@ -175,7 +175,7 @@ namespace El_sheikh.MVC.PL.Controllers
         #region Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int? id) {
+        public async Task<IActionResult> Delete(int? id) {
             if (id is null)
             {
                 return BadRequest();
@@ -185,7 +185,7 @@ namespace El_sheikh.MVC.PL.Controllers
             {
 
 
-                var deleted = _employeeService.DeleteEmployee(id.Value);
+                var deleted = await  _employeeService.DeleteEmployeeAsync(id.Value);
 
                 if (deleted)
                     return RedirectToAction(nameof(Index));

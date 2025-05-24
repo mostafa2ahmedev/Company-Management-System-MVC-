@@ -4,6 +4,7 @@ using El_sheikh.MVC.DAL.Entities.Employees;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Departments;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Employees;
 using El_sheikh.MVC.DAL.UnitOfWork;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,53 +24,55 @@ namespace El_sheikh.MVC.BLL.Services.Employees
             _attachmentService = attachmentService;
         }
 
-        public IEnumerable<EmployeeDto> GetEmployees(string search)
+        public async Task<IEnumerable<EmployeeDto>> GetEmployeesAsync(string search)
         {
-          return  _unitOfWork.EmployeeRepository.GetIQueryable()
-                .Where(E=>!E.IsDeleted && (string.IsNullOrEmpty(search)||E.Name.ToLower().Contains(search.ToLower())))
-                .Select(E=> new EmployeeDto() { 
-          Id = E.Id,
-          Name = E.Name,
-          Age = E.Age,
-          Email = E.Email,
-          Salary = E.Salary,
-          IsActive = E.IsActive,
-          Gender = E.Gender.ToString(),
-          EmployeeType = E.EmployeeType.ToString(),
-          Department =E.Department.Name
-          });
-        }
-
-        public EmployeeDetailsDto? GetEmployeeById(int id)
-        {
-         var employee= _unitOfWork.EmployeeRepository.Get(id);
-
-            if (employee is { }) {
-                return new EmployeeDetailsDto()
+            return await _unitOfWork.EmployeeRepository.GetIQueryable()
+                .Where(E => !E.IsDeleted && (string.IsNullOrEmpty(search) || E.Name.ToLower().Contains(search.ToLower())))
+                .Select(E => new EmployeeDto()
                 {
-                    Id = employee.Id,
-                    Name = employee.Name,
-                    Age = employee.Age,
-                    Email = employee.Email,
-                    Salary = employee.Salary,
-                    IsActive = employee.IsActive,
-                    Gender = employee.Gender.ToString(),
-                    Address = employee.Address,
-                    CreatedBy = employee.CreatedBy,
-                    CreatedOn = employee.CreatedOn,
-                    EmployeeType = employee.EmployeeType.ToString(),
-                    IsDeleted = employee.IsDeleted,
-                    LastModifiedBy = employee.LastModifiedBy,
-                    LastModifiedOn = employee.LastModifiedOn,
-                    DepartmentId =employee.DepartmentId,
-                    Image=employee.Image
-
-                };
-
-            } else
-                return null;
+                    Id = E.Id,
+                    Name = E.Name,
+                    Age = E.Age,
+                    Email = E.Email,
+                    Salary = E.Salary,
+                    IsActive = E.IsActive,
+                    Gender = E.Gender.ToString(),
+                    EmployeeType = E.EmployeeType.ToString(),
+                    Department = E.Department.Name
+                })
+                .AsNoTracking()
+                .ToListAsync();
         }
-        public int CreateEmployee(CreatedEmployeeDto employeeDto)
+
+        public async Task<EmployeeDetailsDto?> GetEmployeeByIdAsync(int id)
+        {
+            var employee = await _unitOfWork.EmployeeRepository.GetAsync(id);
+
+            if (employee == null)
+                return null;
+
+            return new EmployeeDetailsDto()
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                Age = employee.Age,
+                Email = employee.Email,
+                Salary = employee.Salary,
+                IsActive = employee.IsActive,
+                Gender = employee.Gender.ToString(),
+                Address = employee.Address,
+                CreatedBy = employee.CreatedBy,
+                CreatedOn = employee.CreatedOn,
+                EmployeeType = employee.EmployeeType.ToString(),
+                IsDeleted = employee.IsDeleted,
+                LastModifiedBy = employee.LastModifiedBy,
+                LastModifiedOn = employee.LastModifiedOn,
+                DepartmentId = employee.DepartmentId,
+                Image = employee.Image
+            };
+        }
+
+        public async Task<int> CreateEmployeeAsync(CreatedEmployeeDto employeeDto)
         {
             var employee = new Employee()
             {
@@ -88,18 +91,17 @@ namespace El_sheikh.MVC.BLL.Services.Employees
                 LastModifiedOn = DateTime.Now,
                 DepartmentId = employeeDto.DepartmentId,
             };
-            if (employeeDto.Image is not null) {
-               employee.Image= _attachmentService.Upload(employeeDto.Image, "images");
+
+            if (employeeDto.Image is not null)
+            {
+                employee.Image = await _attachmentService.UploadAsync(employeeDto.Image, "images");
             }
 
-          
-            // Add
-            // Update
-            // Delete
              _unitOfWork.EmployeeRepository.Add(employee);
-            return _unitOfWork.Complete();
+            return await _unitOfWork.CompleteAsync();
         }
-        public int UpdateEmployee(UpdatedEmployeeDto employeeDto)
+
+        public async Task<int> UpdateEmployeeAsync(UpdatedEmployeeDto employeeDto)
         {
             var employee = new Employee()
             {
@@ -118,26 +120,27 @@ namespace El_sheikh.MVC.BLL.Services.Employees
                 CreatedBy = 1,
                 LastModifiedOn = DateTime.Now,
                 DepartmentId = employeeDto.DepartmentId,
-
             };
+
             if (employeeDto.Image is not null)
             {
-                employee.Image = _attachmentService.Upload(employeeDto.Image, "images");
+                employee.Image = await _attachmentService.UploadAsync(employeeDto.Image, "images");
             }
+
             _unitOfWork.EmployeeRepository.Update(employee);
-            return _unitOfWork.Complete();
+            return await _unitOfWork.CompleteAsync();
         }
-        public bool DeleteEmployee(int id)
+
+        public async Task<bool> DeleteEmployeeAsync(int id)
         {
-            var employeeRepo = _unitOfWork.EmployeeRepository;
-            var employee= employeeRepo.Get(id);
+            var employee = await _unitOfWork.EmployeeRepository.GetAsync(id);
 
-            if(employee is { })
-                 employeeRepo.Delete(employee);
+            if (employee is null)
+                return false;
 
-            return _unitOfWork.Complete()>0;
+            _unitOfWork.EmployeeRepository.Delete(employee);
+            return await _unitOfWork.CompleteAsync() > 0;
         }
-
 
 
     }

@@ -4,15 +4,15 @@ namespace El_sheikh.MVC.BLL.Services.Departments
 {
     public interface IDepartmentService
     {
-        IEnumerable<DepartmentDTO> GetAllDepartments();
+        Task<IEnumerable<DepartmentDTO>> GetAllDepartmentsAsync();
 
-        DepartmentDetailsDto? GetDepartmentById(int id);
+        Task<DepartmentDetailsDto?> GetDepartmentByIdAsync(int id);
 
-        int CreateDepartment(CreatedDepartmentDto departmentDto);
+        Task<int> CreateDepartmentAsync(CreatedDepartmentDto departmentDto);
 
-        int UpdateDepartment(UpdatedDepartmentDto departmentDto);
+        Task<int> UpdateDepartmentAsync(UpdatedDepartmentDto departmentDto);
 
-        bool DeleteDepartment(int id);
+        Task<bool> DeleteDepartmentAsync(int id);
 
     }
 }

@@ -21,23 +21,24 @@ namespace El_sheikh.MVC.BLL.Services.Departments
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<DepartmentDTO> GetAllDepartments()
+        public async Task<IEnumerable<DepartmentDTO>> GetAllDepartmentsAsync()
         {
-            var departments = _unitOfWork.DepartmentRepository.GetIQueryable().Where(D => !D.IsDeleted).Select(department => new DepartmentDTO()
+            // the Where and Select clauses aren't async because they're just building the query, not executing it.
+            var departments = await _unitOfWork.DepartmentRepository.GetIQueryable().Where(D => !D.IsDeleted).Select(department => new DepartmentDTO()
             {
                 Id = department.Id,
                 Code = department.Code,
                 Name = department.Name,
                 CreationDate = department.CreationDate
-            }).AsNoTracking().ToList();
+            }).AsNoTracking().ToListAsync();
 
 
         return departments;
           
         }
-        public DepartmentDetailsDto? GetDepartmentById(int id)
+        public async Task<DepartmentDetailsDto?> GetDepartmentByIdAsync(int id)
         {
-            var department = _unitOfWork.DepartmentRepository.Get(id);
+            var department =await _unitOfWork.DepartmentRepository.GetAsync(id);
 
             if (department is { } ) {
                 return new DepartmentDetailsDto()
@@ -58,7 +59,7 @@ namespace El_sheikh.MVC.BLL.Services.Departments
             return null;
         }
 
-        public int CreateDepartment(CreatedDepartmentDto departmentDto)
+        public async Task<int> CreateDepartmentAsync(CreatedDepartmentDto departmentDto)
         {
             var createdDepartment = new Department()
             {
@@ -74,9 +75,9 @@ namespace El_sheikh.MVC.BLL.Services.Departments
 
             };
             _unitOfWork.DepartmentRepository.Add(createdDepartment);
-            return _unitOfWork.Complete();
+            return await _unitOfWork.CompleteAsync();
         }
-        public int UpdateDepartment(UpdatedDepartmentDto departmentDto)
+        public async Task<int> UpdateDepartmentAsync(UpdatedDepartmentDto departmentDto)
         {
             var updatedDepartment = new Department()
             {
@@ -90,19 +91,19 @@ namespace El_sheikh.MVC.BLL.Services.Departments
        
             };
             _unitOfWork.DepartmentRepository.Update(updatedDepartment);
-            return _unitOfWork.Complete();
+            return await _unitOfWork.CompleteAsync();
         }
 
-        public bool DeleteDepartment(int id)
+        public async Task<bool> DeleteDepartmentAsync(int id)
         {
             var deptRepo = _unitOfWork.DepartmentRepository;
-        var department = deptRepo.Get(id);
+        var department = await deptRepo.GetAsync(id);
 
             if (department is { })
                 deptRepo.Delete(department);
 
 
-            return _unitOfWork.Complete()>0;
+            return await _unitOfWork.CompleteAsync()>0;
 
   
         }

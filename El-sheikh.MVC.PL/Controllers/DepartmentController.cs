@@ -26,9 +26,9 @@ namespace El_sheikh.MVC.PL.Controllers
 
         #region Index
         [HttpGet] //baseURL/ControllerName/Index
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var departments = _departmentService.GetAllDepartments();
+            var departments = await _departmentService.GetAllDepartmentsAsync();
 
             return View(departments);
         }
@@ -50,7 +50,7 @@ namespace El_sheikh.MVC.PL.Controllers
         [ValidateAntiForgeryToken]  // Action filter
        
 
-        public IActionResult Create(DepartmentViewModel department)
+        public async Task<IActionResult> Create(DepartmentViewModel department)
         {
             var message = string.Empty;
             if (!ModelState.IsValid)   // Server side validation
@@ -64,7 +64,7 @@ namespace El_sheikh.MVC.PL.Controllers
 
          
 
-                var created = _departmentService.CreateDepartment(CreatedDepartment) > 0;
+                var created =await _departmentService.CreateDepartmentAsync(CreatedDepartment) > 0;
 
                 if (!created)
                 {
@@ -99,14 +99,14 @@ namespace El_sheikh.MVC.PL.Controllers
         #region Details 
 
         [HttpGet]
-        public IActionResult Details(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
 
             if (id is null)
             {
                 return BadRequest(); // built in view
             }
-            var department = _departmentService.GetDepartmentById(id.Value);
+            var department =await _departmentService.GetDepartmentByIdAsync(id.Value);
 
             if (department is null)
             {
@@ -130,7 +130,7 @@ namespace El_sheikh.MVC.PL.Controllers
 
         
         [HttpGet]//baseURL/Edit/id
-        public IActionResult Edit(int? id)
+        public async Task<IActionResult> Edit(int? id)
         {
 
 
@@ -138,7 +138,7 @@ namespace El_sheikh.MVC.PL.Controllers
             {
                 return BadRequest(); //Status code 400
             }
-            var department = _departmentService.GetDepartmentById(id.Value);
+            var department =await _departmentService.GetDepartmentByIdAsync(id.Value);
 
             if (department is null)
             {
@@ -153,7 +153,7 @@ namespace El_sheikh.MVC.PL.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit([FromRoute] int id, DepartmentViewModel departmentEditVM)
+        public async Task<IActionResult> Edit([FromRoute] int id, DepartmentViewModel departmentEditVM)
         {
             if (!ModelState.IsValid)
             {  // Server side validation
@@ -169,7 +169,7 @@ namespace El_sheikh.MVC.PL.Controllers
                 updatedDepartment.Id = id; 
                 #endregion
 
-                var updated = _departmentService.UpdateDepartment(updatedDepartment) > 0;
+                var updated =await _departmentService.UpdateDepartmentAsync(updatedDepartment) > 0;
                 
                 if (updated)
                     return RedirectToAction(nameof(Index));
@@ -197,13 +197,13 @@ namespace El_sheikh.MVC.PL.Controllers
 
         #region Delete
         [HttpGet]
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id is null)
             {
                 return BadRequest();
             }
-            var department = _departmentService.GetDepartmentById(id.Value);
+            var department =await _departmentService.GetDepartmentByIdAsync(id.Value);
 
             if (department is null)
             {
@@ -217,7 +217,7 @@ namespace El_sheikh.MVC.PL.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int? id)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
         {
             if (id is null)
             {
@@ -227,7 +227,7 @@ namespace El_sheikh.MVC.PL.Controllers
             var message = string.Empty;
             try
             {
-                var deleted = _departmentService.DeleteDepartment(id.Value);
+                var deleted =await _departmentService.DeleteDepartmentAsync(id.Value);
                 if (deleted)
                 {
                     return RedirectToAction(nameof(Index));
@@ -244,7 +244,7 @@ namespace El_sheikh.MVC.PL.Controllers
             }
 
             ModelState.AddModelError(string.Empty, message);
-            return View(_departmentService.GetDepartmentById(id.Value));
+            return View(_departmentService.GetDepartmentByIdAsync(id.Value));
         }
         #endregion
 

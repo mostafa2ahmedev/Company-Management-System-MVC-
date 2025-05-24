@@ -11,7 +11,7 @@ namespace El_sheikh.MVC.BLL.Common.Services.Attachments
     {
 
 
-        string? Upload(IFormFile file,string folderName);
+        Task<string?> UploadAsync(IFormFile file,string folderName);
 
 
         bool Delete(string filePath);

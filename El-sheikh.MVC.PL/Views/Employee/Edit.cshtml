@@ -4,12 +4,12 @@
     ViewData["Title"] = "Edit";
 
 
-    var departments = new SelectList(_departmentService.GetAllDepartments() as IEnumerable<DepartmentDTO>
+    var departments = new SelectList( await _departmentService.GetAllDepartmentsAsync() as IEnumerable<DepartmentDTO>
     , nameof(DepartmentDTO.Id), nameof(DepartmentDTO.Name));
 }
 
 <div class="row justify-content-center align-items-center">
-    <h1 class="col-8 my-3">Edit Department</h1>
+    <h1 class="col-8 my-3">Edit Employee</h1>
 
     <form asp-action="Edit" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>

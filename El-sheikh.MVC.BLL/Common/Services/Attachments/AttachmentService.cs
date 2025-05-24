@@ -16,7 +16,7 @@ namespace El_sheikh.MVC.BLL.Common.Services.Attachments
 
 
 
-        public string? Upload(IFormFile file, string folderName)
+        public async Task<string?>  UploadAsync(IFormFile file, string folderName)
         {
             //Get the extension name from the filename (with dot)
             var extension = Path.GetExtension(file.FileName);
@@ -48,7 +48,7 @@ namespace El_sheikh.MVC.BLL.Common.Services.Attachments
             using var fileStream = new FileStream(filePath, FileMode.Create);
 
             // start streaming
-            file.CopyTo(fileStream);
+            await  file.CopyToAsync(fileStream);
 
             return fileName;
         }
