@@ -39,5 +39,7 @@ namespace El_sheikh.MVC.BLL.Models.Employees
 
         [Display(Name = "Department")]
         public int? DepartmentId { get; set; }
+
+        public string? Image { get; set; }
     }
 }

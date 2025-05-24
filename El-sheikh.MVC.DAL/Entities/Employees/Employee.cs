@@ -29,5 +29,7 @@ namespace El_sheikh.MVC.DAL.Entities.Employees
         //Navigational Property one
         public virtual Department? Department { get; set; }
 
+        public string? Image { get; set; }
+
     }
 }

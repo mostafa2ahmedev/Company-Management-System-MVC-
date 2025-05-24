@@ -1,4 +1,5 @@
-﻿using El_sheikh.MVC.BLL.Models.Employees;
+﻿using El_sheikh.MVC.BLL.Common.Services.Attachments;
+using El_sheikh.MVC.BLL.Models.Employees;
 using El_sheikh.MVC.DAL.Entities.Employees;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Departments;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Employees;
@@ -14,10 +15,12 @@ namespace El_sheikh.MVC.BLL.Services.Employees
     public class EmployeeService : IEmployeeService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IAttachmentService _attachmentService;
 
-        public EmployeeService(IUnitOfWork unitOfWork) //Ask CLR for creating object from class implement IUnitOfWork
+        public EmployeeService(IUnitOfWork unitOfWork ,IAttachmentService attachmentService) //Ask CLR for creating object from class implement IUnitOfWork
         {
             _unitOfWork = unitOfWork;
+            _attachmentService = attachmentService;
         }
 
         public IEnumerable<EmployeeDto> GetEmployees(string search)
@@ -58,7 +61,8 @@ namespace El_sheikh.MVC.BLL.Services.Employees
                     IsDeleted = employee.IsDeleted,
                     LastModifiedBy = employee.LastModifiedBy,
                     LastModifiedOn = employee.LastModifiedOn,
-                    DepartmentId =employee.DepartmentId
+                    DepartmentId =employee.DepartmentId,
+                    Image=employee.Image
 
                 };
 
@@ -71,7 +75,7 @@ namespace El_sheikh.MVC.BLL.Services.Employees
             {
                 Name = employeeDto.Name,
                 Address = employeeDto.Address,
-                Age = employeeDto.Age,           
+                Age = employeeDto.Age,
                 Email = employeeDto.Email,
                 HiringDate = employeeDto.HiringDate,
                 Gender = employeeDto.Gender,
@@ -83,11 +87,12 @@ namespace El_sheikh.MVC.BLL.Services.Employees
                 CreatedBy = 1,
                 LastModifiedOn = DateTime.Now,
                 DepartmentId = employeeDto.DepartmentId,
-                
-                
-
             };
+            if (employeeDto.Image is not null) {
+               employee.Image= _attachmentService.Upload(employeeDto.Image, "images");
+            }
 
+          
             // Add
             // Update
             // Delete
@@ -115,6 +120,10 @@ namespace El_sheikh.MVC.BLL.Services.Employees
                 DepartmentId = employeeDto.DepartmentId,
 
             };
+            if (employeeDto.Image is not null)
+            {
+                employee.Image = _attachmentService.Upload(employeeDto.Image, "images");
+            }
             _unitOfWork.EmployeeRepository.Update(employee);
             return _unitOfWork.Complete();
         }

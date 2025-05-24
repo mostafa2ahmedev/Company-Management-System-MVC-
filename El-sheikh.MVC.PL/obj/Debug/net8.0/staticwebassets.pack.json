@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png",
+      "PackagePath": "staticwebassets\\files\\images\\0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png"
+    },
+    {
+      "Id": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\ffa3196f-f83b-414e-a431-fd1468681ada.png",
+      "PackagePath": "staticwebassets\\files\\images\\ffa3196f-f83b-414e-a431-fd1468681ada.png"
+    },
+    {
       "Id": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

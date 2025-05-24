@@ -1,4 +1,5 @@
 ﻿using El_sheikh.MVC.DAL.Common.Enums;
+using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
 namespace El_sheikh.MVC.BLL.Models.Employees
@@ -37,6 +38,8 @@ namespace El_sheikh.MVC.BLL.Models.Employees
         public DateOnly HiringDate { get; set; }
 
         public int? DepartmentId { get; set; }
+
+        public IFormFile? Image { get; set; }
 
     }
 }

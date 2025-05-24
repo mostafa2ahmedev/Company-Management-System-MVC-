@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2FevVfviP5vcrNykM/k4VsFa7nNqqMZUmyn9tKSCMEI=",
+  "Hash": "g+cNNdP3wbhxm6tMSjuhRVPDU3HQPenNXCN2Ylbz39Q=",
   "Source": "El-sheikh.MVC.PL",
   "BasePath": "_content/El-sheikh.MVC.PL",
   "Mode": "Default",
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png",
+      "SourceId": "El-sheikh.MVC.PL",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\",
+      "BasePath": "_content/El-sheikh.MVC.PL",
+      "RelativePath": "files/images/0670c5b8-14d8-4929-a9af-68cc93e7e5e5#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mpvrm2tu0k",
+      "Integrity": "SkcdhbKEKaA7ZEcagZE5YiK1PkxmZOZxEEZqSIANq9A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\images\\0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png"
+    },
+    {
+      "Identity": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\ffa3196f-f83b-414e-a431-fd1468681ada.png",
+      "SourceId": "El-sheikh.MVC.PL",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\",
+      "BasePath": "_content/El-sheikh.MVC.PL",
+      "RelativePath": "files/images/ffa3196f-f83b-414e-a431-fd1468681ada#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2dq4t2rqkk",
+      "Integrity": "iuxCTEaTdzea+y6uhZpSMLdhW5hBEzIAAHqEosKSG8k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\images\\ffa3196f-f83b-414e-a431-fd1468681ada.png"
     },
     {
       "Identity": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\js\\site.js",
@@ -1645,6 +1687,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "files/images/0670c5b8-14d8-4929-a9af-68cc93e7e5e5.mpvrm2tu0k.png",
+      "AssetFile": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1581418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SkcdhbKEKaA7ZEcagZE5YiK1PkxmZOZxEEZqSIANq9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 24 May 2025 13:27:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mpvrm2tu0k"
+        },
+        {
+          "Name": "label",
+          "Value": "files/images/0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SkcdhbKEKaA7ZEcagZE5YiK1PkxmZOZxEEZqSIANq9A="
+        }
+      ]
+    },
+    {
+      "Route": "files/images/0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png",
+      "AssetFile": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1581418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SkcdhbKEKaA7ZEcagZE5YiK1PkxmZOZxEEZqSIANq9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 24 May 2025 13:27:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SkcdhbKEKaA7ZEcagZE5YiK1PkxmZOZxEEZqSIANq9A="
+        }
+      ]
+    },
+    {
+      "Route": "files/images/ffa3196f-f83b-414e-a431-fd1468681ada.2dq4t2rqkk.png",
+      "AssetFile": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\ffa3196f-f83b-414e-a431-fd1468681ada.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "156094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iuxCTEaTdzea+y6uhZpSMLdhW5hBEzIAAHqEosKSG8k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 24 May 2025 13:28:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2dq4t2rqkk"
+        },
+        {
+          "Name": "label",
+          "Value": "files/images/ffa3196f-f83b-414e-a431-fd1468681ada.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iuxCTEaTdzea+y6uhZpSMLdhW5hBEzIAAHqEosKSG8k="
+        }
+      ]
+    },
+    {
+      "Route": "files/images/ffa3196f-f83b-414e-a431-fd1468681ada.png",
+      "AssetFile": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\files\\images\\ffa3196f-f83b-414e-a431-fd1468681ada.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "156094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iuxCTEaTdzea+y6uhZpSMLdhW5hBEzIAAHqEosKSG8k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 24 May 2025 13:28:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iuxCTEaTdzea+y6uhZpSMLdhW5hBEzIAAHqEosKSG8k="
         }
       ]
     },

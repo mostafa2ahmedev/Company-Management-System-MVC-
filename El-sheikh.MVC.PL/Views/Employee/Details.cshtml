@@ -11,7 +11,23 @@
 }
 
 <h1>Details</h1>
+<br/>
 
+
+<div class="row justify-content-start align-items-start mb-4">
+    <div class="col-4">
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <img src="~/files/images/@Model.Image" class="img-fluid rounded-2 border shadow-sm w-100" alt="Employee Image" style="height: 300px; object-fit: cover;" />
+        }
+        else
+        {
+            <div class="d-flex align-items-center justify-content-center bg-secondary text-white rounded-2 border shadow-sm w-100" style="height: 300px;">
+                <span>No Image Available</span>
+            </div>
+        }
+    </div>
+</div>
 <!-- Tab Headers -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">

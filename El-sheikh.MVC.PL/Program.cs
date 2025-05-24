@@ -1,3 +1,4 @@
+using El_sheikh.MVC.BLL.Common.Services.Attachments;
 using El_sheikh.MVC.BLL.Services.Departments;
 using El_sheikh.MVC.BLL.Services.Employees;
 using El_sheikh.MVC.DAL.Persistence.Data;
@@ -38,7 +39,8 @@ namespace El_sheikh.MVC.PL
             //builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             builder.Services.AddScoped<IDepartmentService, DepartmentService>();
             builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-            builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+            builder.Services.AddScoped<IAttachmentService , AttachmentService>();
+            builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
             builder.Services.AddAutoMapper(M => M.AddProfile(new MappingProfile()));
             #endregion
 

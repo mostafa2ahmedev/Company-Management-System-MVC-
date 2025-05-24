@@ -25,5 +25,8 @@ namespace El_sheikh.MVC.BLL.Models.Employees
         public string Gender { get; set; } = null!;
         public string EmployeeType { get; set; } = null!;
         public string? Department { get; set; } = null!;
+
+
+        public string? Image { get; set; }
     }
 }
