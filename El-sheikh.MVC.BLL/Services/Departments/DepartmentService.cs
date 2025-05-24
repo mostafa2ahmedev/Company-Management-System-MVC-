@@ -2,6 +2,7 @@
 using El_sheikh.MVC.BLL.Services.Departments;
 using El_sheikh.MVC.DAL.Entities.Departments;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Departments;
+using El_sheikh.MVC.DAL.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,16 +14,16 @@ namespace El_sheikh.MVC.BLL.Services.Departments
 {
     public class DepartmentService : IDepartmentService
     {
-        private readonly IDepartmentRepository _departmentRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public DepartmentService(IDepartmentRepository departmentService) // Ask CLR to create object from class implements IDepartmentRepository
+        public DepartmentService(IUnitOfWork unitOfWork) // Ask CLR to create object from class implements IUnitOfWork
         {
-            _departmentRepository = departmentService;
+            _unitOfWork = unitOfWork;
         }
 
         public IEnumerable<DepartmentDTO> GetAllDepartments()
         {
-            var departments = _departmentRepository.GetIQueryable().Where(D => !D.IsDeleted).Select(department => new DepartmentDTO()
+            var departments = _unitOfWork.DepartmentRepository.GetIQueryable().Where(D => !D.IsDeleted).Select(department => new DepartmentDTO()
             {
                 Id = department.Id,
                 Code = department.Code,
@@ -36,7 +37,7 @@ namespace El_sheikh.MVC.BLL.Services.Departments
         }
         public DepartmentDetailsDto? GetDepartmentById(int id)
         {
-            var department = _departmentRepository.Get(id);
+            var department = _unitOfWork.DepartmentRepository.Get(id);
 
             if (department is { } ) {
                 return new DepartmentDetailsDto()
@@ -72,7 +73,8 @@ namespace El_sheikh.MVC.BLL.Services.Departments
                 
 
             };
-       return  _departmentRepository.Add(createdDepartment);
+            _unitOfWork.DepartmentRepository.Add(createdDepartment);
+            return _unitOfWork.Complete();
         }
         public int UpdateDepartment(UpdatedDepartmentDto departmentDto)
         {
@@ -87,18 +89,20 @@ namespace El_sheikh.MVC.BLL.Services.Departments
                 LastModifiedOn = DateTime.UtcNow,         
        
             };
-            return _departmentRepository.Update(updatedDepartment);
+            _unitOfWork.DepartmentRepository.Update(updatedDepartment);
+            return _unitOfWork.Complete();
         }
 
         public bool DeleteDepartment(int id)
         {
-        var department = _departmentRepository.Get(id);
+            var deptRepo = _unitOfWork.DepartmentRepository;
+        var department = deptRepo.Get(id);
 
             if (department is { })
-              return  _departmentRepository.Delete(department) >0;
+                deptRepo.Delete(department);
 
 
-            return false;
+            return _unitOfWork.Complete()>0;
 
   
         }

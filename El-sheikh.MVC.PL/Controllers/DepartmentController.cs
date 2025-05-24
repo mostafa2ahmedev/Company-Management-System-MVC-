@@ -168,6 +168,7 @@ namespace El_sheikh.MVC.PL.Controllers
                 #region (updated) by me
                 updatedDepartment.Id = id; 
                 #endregion
+
                 var updated = _departmentService.UpdateDepartment(updatedDepartment) > 0;
                 
                 if (updated)

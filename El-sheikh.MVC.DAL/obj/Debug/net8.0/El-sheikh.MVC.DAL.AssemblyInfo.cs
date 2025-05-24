@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("El-sheikh.MVC.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f6150e5a6697592ed45aa82a42997fa0b55164e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ebe8f8d2f85b3277d631ebf815cffb8674dcabe")]
 [assembly: System.Reflection.AssemblyProductAttribute("El-sheikh.MVC.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("El-sheikh.MVC.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

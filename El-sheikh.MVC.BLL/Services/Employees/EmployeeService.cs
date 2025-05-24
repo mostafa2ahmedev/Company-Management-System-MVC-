@@ -2,6 +2,7 @@
 using El_sheikh.MVC.DAL.Entities.Employees;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Departments;
 using El_sheikh.MVC.DAL.Persistence.Repositories.Employees;
+using El_sheikh.MVC.DAL.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,16 @@ namespace El_sheikh.MVC.BLL.Services.Employees
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public EmployeeService(IEmployeeRepository employeeRepository) //Ask clr
+        public EmployeeService(IUnitOfWork unitOfWork) //Ask CLR for creating object from class implement IUnitOfWork
         {
-            _employeeRepository = employeeRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public IEnumerable<EmployeeDto> GetEmployees(string search)
         {
-          return  _employeeRepository.GetIQueryable()
+          return  _unitOfWork.EmployeeRepository.GetIQueryable()
                 .Where(E=>!E.IsDeleted && (string.IsNullOrEmpty(search)||E.Name.ToLower().Contains(search.ToLower())))
                 .Select(E=> new EmployeeDto() { 
           Id = E.Id,
@@ -38,7 +39,7 @@ namespace El_sheikh.MVC.BLL.Services.Employees
 
         public EmployeeDetailsDto? GetEmployeeById(int id)
         {
-         var employee=  _employeeRepository.Get(id);
+         var employee= _unitOfWork.EmployeeRepository.Get(id);
 
             if (employee is { }) {
                 return new EmployeeDetailsDto()
@@ -86,7 +87,12 @@ namespace El_sheikh.MVC.BLL.Services.Employees
                 
 
             };
-            return _employeeRepository.Add(employee);
+
+            // Add
+            // Update
+            // Delete
+             _unitOfWork.EmployeeRepository.Add(employee);
+            return _unitOfWork.Complete();
         }
         public int UpdateEmployee(UpdatedEmployeeDto employeeDto)
         {
@@ -109,15 +115,18 @@ namespace El_sheikh.MVC.BLL.Services.Employees
                 DepartmentId = employeeDto.DepartmentId,
 
             };
-           return _employeeRepository.Update(employee);
+            _unitOfWork.EmployeeRepository.Update(employee);
+            return _unitOfWork.Complete();
         }
         public bool DeleteEmployee(int id)
         {
-            var employee= _employeeRepository.Get(id);
+            var employeeRepo = _unitOfWork.EmployeeRepository;
+            var employee= employeeRepo.Get(id);
 
             if(employee is { })
-                return _employeeRepository.Delete(employee) >0;
-            return false;
+                 employeeRepo.Delete(employee);
+
+            return _unitOfWork.Complete()>0;
         }
 
 

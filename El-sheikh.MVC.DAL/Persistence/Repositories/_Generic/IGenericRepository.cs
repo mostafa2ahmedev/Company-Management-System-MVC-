@@ -15,11 +15,11 @@ namespace El_sheikh.MVC.DAL.Persistence.Repositories._Generic
         IEnumerable<T>GetAll(bool withAsNoTracking = true);
 
         IQueryable<T> GetIQueryable();
-        int Add(T entity);
+        void Add(T entity);
 
-        int Update(T entity);
+        void Update(T entity);
 
-        int Delete(T entity);
+        void Delete(T entity);
 
 
     }
