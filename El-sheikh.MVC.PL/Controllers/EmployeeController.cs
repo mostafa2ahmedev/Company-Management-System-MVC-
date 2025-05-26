@@ -3,11 +3,12 @@ using El_sheikh.MVC.BLL.Services.Departments;
 using El_sheikh.MVC.BLL.Services.Employees;
 using El_sheikh.MVC.DAL.Common.Enums;
 using El_sheikh.MVC.DAL.Entities.Departments;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace El_sheikh.MVC.PL.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly ILogger<EmployeeController> _logger;

@@ -1,3 +1,4 @@
+wwwroot\css\authLayout.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\files\images\0670c5b8-14d8-4929-a9af-68cc93e7e5e5.png

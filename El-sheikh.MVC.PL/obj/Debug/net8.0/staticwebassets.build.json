@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t6Rpq3wU03gce1mePt28sfKyuCz9YRqTWhZxpZFRI3Y=",
+  "Hash": "E/E7b0fditZpguqCB1xkoWkLtA4VlG2f1a/RCLuyp5c=",
   "Source": "El-sheikh.MVC.PL",
   "BasePath": "_content/El-sheikh.MVC.PL",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\El-sheikh.MVC.PL.bundle.scp.css"
+    },
+    {
+      "Identity": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\css\\authLayout.css",
+      "SourceId": "El-sheikh.MVC.PL",
+      "SourceType": "Discovered",
+      "ContentRoot": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\",
+      "BasePath": "_content/El-sheikh.MVC.PL",
+      "RelativePath": "css/authLayout#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3sx6udjjqc",
+      "Integrity": "gxJHFOUlAE8qBr6Z1g3rQena0UuZVuSavQV9BDoWGyA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\authLayout.css"
     },
     {
       "Identity": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\css\\site.css",
@@ -1383,6 +1404,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/authLayout.3sx6udjjqc.css",
+      "AssetFile": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\css\\authLayout.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17031"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gxJHFOUlAE8qBr6Z1g3rQena0UuZVuSavQV9BDoWGyA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 11:07:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3sx6udjjqc"
+        },
+        {
+          "Name": "label",
+          "Value": "css/authLayout.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gxJHFOUlAE8qBr6Z1g3rQena0UuZVuSavQV9BDoWGyA="
+        }
+      ]
+    },
+    {
+      "Route": "css/authLayout.css",
+      "AssetFile": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\css\\authLayout.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17031"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gxJHFOUlAE8qBr6Z1g3rQena0UuZVuSavQV9BDoWGyA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 11:07:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gxJHFOUlAE8qBr6Z1g3rQena0UuZVuSavQV9BDoWGyA="
+        }
+      ]
+    },
     {
       "Route": "css/site.c2tiyv64ts.css",
       "AssetFile": "W:\\Root Material .NET\\Assingments\\MVC\\El-sheikh.MVC\\El-sheikh.MVC.PL\\wwwroot\\css\\site.css",

@@ -9,6 +9,7 @@ using System.Security.Policy;
 
 namespace El_sheikh.MVC.PL.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
         private readonly IDepartmentService _departmentService;

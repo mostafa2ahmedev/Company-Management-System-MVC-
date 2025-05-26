@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -57,6 +61,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[9.0.5, )"
             }
           },
           "imports": [

@@ -1,0 +1,52 @@
+﻿
+@model SignUpViewModel
+@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+
+
+
+
+<div class="main-agileinfo">
+	<div class="agileits-top">
+        <form asp-action="SignUp" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input class="text mb-2" asp-for="FirstName" placeholder="First Name" required="" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+
+            <input class="text mb-2" asp-for="LastName" placeholder="Last Name" required="" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+
+            <input class="text mb-2" asp-for="UserName" placeholder="User Name" required="" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+
+            <input class="text mb-2 email" asp-for="Email" placeholder="Email" required="" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <input class="text mb-2" asp-for="Password" placeholder="Password" required="" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <input class="text mb-2 w3lpass" asp-for="ConfirmPassword" placeholder="Confirm Password" required="" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+            <div class="wthree-text">
+                <label class="anim">
+                    <input type="checkbox" asp-for="IsAgree" class="checkbox" required="" />
+                    <span>I Agree To The Terms & Conditions</span>
+                </label>
+                <span asp-validation-for="IsAgree" class="text-danger"></span>
+                <div class="clear"> </div>
+            </div>
+
+            <input type="submit" value="SIGNUP" />
+        </form>
+		<p>Don't have an Account? <a asp-action="SignIn"> Login Now!</a></p>
+	</div>
+</div>
+
+@section validationScripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
